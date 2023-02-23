@@ -28,8 +28,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: svg2xml
-          path: build/output/libs/*.jar
+          name: Svg2VectorAndroid
+          path: *
 
       - name: Clean Workflow Logs
         uses: igorjs/gh-actions-clean-workflow@v3
