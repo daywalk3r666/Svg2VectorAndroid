@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: svg2xml
-          path: build/output/*.jar
+          path: build/output/libs*.jar
 
       - name: Clean Workflow Logs
         uses: igorjs/gh-actions-clean-workflow@v3
