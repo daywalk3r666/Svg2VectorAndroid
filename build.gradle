@@ -1,3 +1,6 @@
+group 'geekyappz'
+version '1.0.5'
+
 apply plugin: 'java'
 
 repositories {
@@ -10,7 +13,8 @@ repositories {
 task fatJar(type: Jar) {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
-        attributes 'Implementation-Title': 'svg2xml',
+        attributes 'Implementation-Title': 'Svg2VectorAndroid',
+                'Implementation-Version': version,
                 'Main-Class': 'com.vector.svg2vectorandroid.Runner'
     }
     archiveBaseName = project.name
