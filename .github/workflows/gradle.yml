@@ -1,0 +1,30 @@
+jobs:
+  build-jar:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: 19
+      - uses: gradle/gradle-build-action@v2
+        with:
+          gradle-home-cache-cleanup: true
+      - name: Build jar
+        run: ./gradlew fatJar
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: svg2xml
+          path: app/build/outputs/apk/release/*.jar
+
+      - name: Clean Workflow Logs
+        uses: igorjs/gh-actions-clean-workflow@v3
+        with:
+               token: ${{ secrets.TOKEN }}
+               days_old: 0  
