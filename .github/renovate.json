@@ -10,5 +10,6 @@
             "matchPackagePrefixes": [
                 "com.android.tools"
             ]
+         ]     
   ]
 }
