@@ -10,7 +10,7 @@
             "groupSlug": "sdk",
             "matchPackagePrefixes": [
                 "com.android.tools*"
-            ]
-         }    
-  
+             ]
+        }
+    ]
 }
